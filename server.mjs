@@ -1,0 +1,1 @@
+import express from'express';import{releases}from'./domain.mjs';const d=releases(),a=express();a.get('/health',(_,r)=>r.json({status:'ok',releases:d.items.length}));const p=Number(process.env.RELEASE_PORT)||21700;a.listen(p,'0.0.0.0',()=>console.log(`Release governance service on 0.0.0.0:${p}`));
